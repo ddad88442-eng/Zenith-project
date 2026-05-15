@@ -16,14 +16,8 @@
 const API_BASE_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:8080"
-    : "https://zenith-project-nd2k.onrender.com";
-<<<<<<< HEAD
+    : window.location.origin; // Auto-uses same domain as the page
 // ── State ────────────────────────────────────────────────────
-=======
-
-// ── Config 
-// ── State 
->>>>>>> 8cdf8f3 (Fix API base config)
 const AppState = {
   tasks:          [],
   notes:          [],
@@ -34,13 +28,7 @@ const AppState = {
   token:          null,
 };
 
-<<<<<<< HEAD
 // ── API Helper ───────────────────────────────────────────────
-=======
-// ── API Helper 
-
-
->>>>>>> 8cdf8f3 (Fix API base config)
 async function apiFetch(endpoint, options = {}) {
   const headers = { 'Content-Type': 'application/json' };
   if (AppState.token) headers['Authorization'] = `Bearer ${AppState.token}`;
